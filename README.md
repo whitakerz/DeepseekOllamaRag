@@ -1,0 +1,2 @@
+BLOG:
+https://dev.to/ajmal_hasan/setting-up-ollama-running-deepseek-r1-locally-for-a-powerful-rag-system-4pd4
