@@ -46,7 +46,7 @@ with st.sidebar:
     st.markdown("""
     - **Embedding Model**: HuggingFace thenlper/gte-large 
     - **Retriever Type**: Similarity Search
-    - **LLM**: initium/law_model
+    - **LLM**: nawalkhan/legal-llm
     """)
 
 # File uploader for TXT
@@ -82,7 +82,7 @@ if uploaded_file is not None:
     retriever = vector.as_retriever(search_type="similarity", search_kwargs={"k": 5})
 
     # Define the LLM and the prompt
-    llm = Ollama(model="initium/law_model")
+    llm = Ollama(model="nawalkhan/legal-llm")
     prompt = """
     You are a educated and studied development plans reviewer for the City of Austin. You know all the rules and regulations of the City. 
     1. Use the following pieces of context to answer the question at the end.
