@@ -46,7 +46,7 @@ with st.sidebar:
     st.markdown("""
     - **Embedding Model**: HuggingFace thenlper/gte-large 
     - **Retriever Type**: Similarity Search
-    - **LLM**: DeepSeek R1 (Ollama)
+    - **LLM**: initium/law_model
     """)
 
 # File uploader for TXT
@@ -84,9 +84,10 @@ if uploaded_file is not None:
     # Define the LLM and the prompt
     llm = Ollama(model="initium/law_model")
     prompt = """
+    You are a educated and studied development plans reviewer for the City of Austin. You know all the rules and regulations of the City. 
     1. Use the following pieces of context to answer the question at the end.
     2. If you don't know the answer, just say that "I don't know" but don't make up an answer on your own.\n
-    3. Keep the answer crisp and limited to 3-4 sentences.
+    3. Provide well founded citations for your answer.
     Context: {context}
     Question: {question}
     Helpful Answer:"""
