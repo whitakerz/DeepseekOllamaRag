@@ -44,7 +44,7 @@ with st.sidebar:
 
     st.header("Settings")
     st.markdown("""
-    - **Embedding Model**: HuggingFace
+    - **Embedding Model**: HuggingFace thenlper/gte-large 
     - **Retriever Type**: Similarity Search
     - **LLM**: DeepSeek R1 (Ollama)
     """)
@@ -74,7 +74,7 @@ if uploaded_file is not None:
     documents = text_splitter.split_documents(docs)
 
     # Instantiate the embedding model
-    embedder = HuggingFaceEmbeddings()
+    embedder = HuggingFaceEmbeddings(model_name="thenlper/gte-large") #added "model_name=thenlper/gte-large" the parenthesis were there before
 
     # Create vector store and retriever
     st.subheader("🔍 Creating embeddings and setting up the retriever...")
